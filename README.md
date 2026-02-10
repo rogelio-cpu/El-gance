@@ -37,10 +37,22 @@ Bienvenue sur le projet **Élégance & Éclat**, un site e-commerce de bijoux po
 └── README.md           # Documentation du projet
 ```
 
-## 📝 Installation
+## � Installation & Déploiement
 
+### Localement
 1. Clonez ou téléchargez ce dossier.
 2. Ouvrez `index.html` dans n'importe quel navigateur moderne.
+
+### Sur Render (Site Statique)
+1. **Poussez votre code** sur un dépôt GitHub, GitLab ou Bitbucket.
+2. **Connectez-vous à [Render](https://render.com/)**.
+3. Cliquez sur **New +** et choisissez **Static Site**.
+4. **Connectez votre dépôt** GitHub.
+5. **Configuration** :
+   - **Name** : `elegance-eclat` (ou le nom de votre choix).
+   - **Build Command** : Laissez vide (ou `npm install` si vous ajoutez des outils de build plus tard).
+   - **Publish Directory** : `./` (la racine).
+6. Cliquez sur **Create Static Site**. Votre site sera en ligne en quelques secondes !
 
 ---
 *Projet réalisé avec passion pour l'élégance.*
