@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Élégance & Éclat</title>
+    <!-- Favicon pour l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Optionnel : Pour les appareils Apple (icône sur l'écran d'accueil) -->
+    <link rel="apple-touch-icon" href="logo-180.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Élégance<span>&Éclat</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#products">Collections</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <section class="info-page">
+            <div class="section-title">
+                <h2>À Propos de Nous</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="content">
+                <p>Fondée sur une passion pour l'artisanat d'exception, <b>Élégance & Éclat</b> est bien plus qu'une
+                    simple
+                    bijouterie. C'est une célébration de la féminité, de la grâce et du savoir-faire intemporel.</p>
+                <p>Chaque pièce de notre collection est méticuleusement sélectionnée pour sa qualité supérieure et son
+                    design unique. Nous croyons que chaque bijou raconte une histoire, et nous sommes honorés de faire
+                    partie de la vôtre.</p>
+                <p>Notre engagement envers l'excellence se reflète dans chaque détail, des perles roses les plus rares
+                    aux diamants les plus étincelants. Bienvenue dans notre univers où le luxe rencontre l'émotion.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Side Cart Sidebar & Payment Modal (Copied for consistency) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="total-price">Total: <span id="cart-total">0</span> FC</div>
+            <button id="checkout-btn" class="checkout-btn">Finaliser l'achat</button>
+        </div>
+    </div>
+    <div id="payment-modal" class="payment-modal">
+        <div class="payment-content">
+            <button id="close-payment" class="close-payment">&times;</button>
+            <div class="payment-header">
+                <h3>Paiement Sécurisé</h3>
+                <p>Montant à régler : <span id="payment-amount">0</span> FC</p>
+            </div>
+            <form id="payment-form">
+                <div class="form-group"><label>Nom sur la carte</label><input type="text" placeholder="Mme. Julie Doe"
+                        required></div>
+                <div class="form-group"><label>Numéro de carte</label><input type="text"
+                        placeholder="0000 0000 0000 0000" maxlength="19" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Expiration</label><input type="text" placeholder="MM/YY"
+                            maxlength="5" required></div>
+                    <div class="form-group"><label>CVV</label><input type="text" placeholder="123" maxlength="3"
+                            required></div>
+                </div>
+                <button type="submit" class="pay-btn"><span id="pay-text">Confirmer le paiement</span><i
+                        id="pay-spinner" class="fas fa-spinner fa-spin" style="display: none;"></i></button>
+            </form>
+            <div id="success-message" class="success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <h4>Paiement Réussi !</h4>
+                <p>Merci pour votre commande.</p>
+                <button id="close-success" class="btn">Retour à la boutique</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Élégance & Éclat</h3>
+                <p>La destination privilégiée pour les bijoux d'exception.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="terms.html">Conditions de vente</a></li>
+                    <li><a href="delivery.html">Livraison</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Élégance & Éclat. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

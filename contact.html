@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Élégance & Éclat</title>
+    <!-- Favicon pour l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Optionnel : Pour les appareils Apple (icône sur l'écran d'accueil) -->
+    <link rel="apple-touch-icon" href="logo-180.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <h1>Élégance<span>&Éclat</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#products">Collections</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <section class="info-page">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="content">
+                <p style="text-align: center;">Des questions ? Des demandes spéciales ? Nous sommes à votre écoute.</p>
+                <form class="contact-form" style="max-width: 600px; margin: 2rem auto;">
+                    <div class="form-group">
+                        <label>Nom Complet</label>
+                        <input type="text" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Comment pouvons-nous vous aider ?"
+                            style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 8px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Envoyer</button>
+                </form>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p><i class="fas fa-map-marker-alt"></i> Kinshasa, République Démocratique du Congo</p>
+                    <p><i class="fas fa-phone"></i> +243 000 000 000</p>
+                    <p><i class="fas fa-envelope"></i> contact@elegance-eclat.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Side Cart & Payment (Common) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3><button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="total-price">Total: <span id="cart-total">0</span> FC</div>
+            <button id="checkout-btn" class="checkout-btn">Finaliser l'achat</button>
+        </div>
+    </div>
+    <div id="payment-modal" class="payment-modal">
+        <div class="payment-content">
+            <button id="close-payment" class="close-payment">&times;</button>
+            <div class="payment-header">
+                <h3>Paiement Sécurisé</h3>
+                <p>Montant : <span id="payment-amount">0</span> FC</p>
+            </div>
+            <form id="payment-form">
+                <div class="form-group"><label>Nom</label><input type="text" required></div>
+                <div class="form-group"><label>Numéro</label><input type="text" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Exp</label><input type="text" required></div>
+                    <div class="form-group"><label>CVV</label><input type="text" required></div>
+                </div>
+                <button type="submit" class="pay-btn"><span id="pay-text">Payer</span><i id="pay-spinner"
+                        class="fas fa-spinner fa-spin" style="display: none;"></i></button>
+            </form>
+            <div id="success-message" class="success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <p>Réussi !</p>
+                <button id="close-success" class="btn">Retour</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Élégance & Éclat</h3>
+                <p>La destination privilégiée pour les bijoux d'exception.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="terms.html">Conditions de vente</a></li>
+                    <li><a href="delivery.html">Livraison</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Élégance & Éclat. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
