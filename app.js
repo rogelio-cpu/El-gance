@@ -81,6 +81,8 @@ const successMessage = document.getElementById('success-message');
 const closeSuccess = document.getElementById('close-success');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const mobileCartBtn = document.getElementById('mobile-cart-btn');
+const mobileCartCounts = document.querySelectorAll('.mobile-cart-count');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -140,7 +142,8 @@ function saveCart() {
 function updateUI() {
     // Update Badge
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.innerText = count;
+    if (cartCount) cartCount.innerText = count;
+    mobileCartCounts.forEach(el => el.innerText = count);
 
     // Render Cart Items
     if (cart.length === 0) {
@@ -201,12 +204,26 @@ function closeMobileMenu() {
     }
 }
 
-mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+}
 
 // Close mobile menu when clicking on a link
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-});
+if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(link => {
+        if (link.id !== 'mobile-cart-btn') {
+            link.addEventListener('click', closeMobileMenu);
+        }
+    });
+}
+
+if (mobileCartBtn) {
+    mobileCartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMobileMenu();
+        openCartSidebar();
+    });
+}
 
 // Payment Flows
 checkoutBtn.addEventListener('click', () => {
