@@ -79,6 +79,8 @@ const payText = document.getElementById('pay-text');
 const paySpinner = document.getElementById('pay-spinner');
 const successMessage = document.getElementById('success-message');
 const closeSuccess = document.getElementById('close-success');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -177,6 +179,33 @@ closeCart.addEventListener('click', closeCartSidebar);
 overlay.addEventListener('click', () => {
     closeCartSidebar();
     closePaymentModal();
+    closeMobileMenu();
+});
+
+// Mobile Menu Functions
+function toggleMobileMenu() {
+    navLinks.classList.toggle('active');
+    if (navLinks.classList.contains('active')) {
+        overlay.classList.add('active');
+    } else {
+        if (!cartSidebar.classList.contains('open')) {
+            overlay.classList.remove('active');
+        }
+    }
+}
+
+function closeMobileMenu() {
+    navLinks.classList.remove('active');
+    if (!cartSidebar.classList.contains('open') && !paymentModal.classList.contains('open')) {
+        overlay.classList.remove('active');
+    }
+}
+
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking on a link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
 });
 
 // Payment Flows
