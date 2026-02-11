@@ -5,7 +5,7 @@ const products = [
         name: "Collier Perle Rose",
         category: "Colliers",
         price: 85000,
-        image: "./img/1.avif"
+        image: "./img/1.jpg"
     },
     {
         id: 2,
@@ -40,21 +40,21 @@ const products = [
         name: "Alliante Platine Luxe",
         category: "Bagues",
         price: 210000,
-        image: "./img/6.avif"
+        image: "./img/6.jpg"
     },
     {
         id: 7,
         name: "Boucles Saphir Nuit",
         category: "Boucles d'Oreilles",
         price: 78000,
-        image: "./img/7.avif"
+        image: "./img/7.jpg"
     },
     {
         id: 8,
         name: "Bracelet Perles d'Eau",
         category: "Bracelets",
         price: 54000,
-        image: "./img/8.avif"
+        image: "./img/8.jpg"
     }
 ];
 
